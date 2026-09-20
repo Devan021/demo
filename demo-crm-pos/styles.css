@@ -242,6 +242,7 @@ main {
   padding: 36px 44px 46px;
   max-width: 1530px;
   margin: auto;
+  container-type: inline-size;
 }
 .view.active {
   display: block;
@@ -598,7 +599,13 @@ main {
   gap: 18px;
 }
 .customers-panel {
+  min-width: 0;
   padding: 4px 19px;
+}
+.customer-list {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
 }
 .customer-row {
   width: 100%;
@@ -1099,6 +1106,31 @@ main {
   transform: translateY(0);
   opacity: 1;
   z-index: 10;
+}
+@container (max-width: 960px) {
+  .crm-toolbar {
+    flex-wrap: wrap;
+    align-items: stretch;
+  }
+  .search {
+    flex: 1 1 100%;
+    max-width: none;
+  }
+  #customer-count {
+    margin-left: 0;
+    align-self: center;
+  }
+  .customer-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .customer-detail {
+    min-height: auto;
+  }
+}
+@container (max-width: 620px) {
+  .customer-detail {
+    display: none;
+  }
 }
 @media (max-width: 1000px) {
   .app-shell {
