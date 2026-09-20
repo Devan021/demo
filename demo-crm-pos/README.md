@@ -17,6 +17,10 @@ python3 -m http.server 4173 --directory demo-crm-pos
 
 Open `http://localhost:4173`.
 
+## Deploy to Vercel
+
+Use `demo-crm-pos` as the Vercel project root directory. It is a static deployment—no build command, server runtime, or environment variables are required.
+
 ## Important
 
 This is a proposal demo using synthetic customer and sales data. It does not charge cards, call Stripe/Square/OpenAI, send email, or persist data.
