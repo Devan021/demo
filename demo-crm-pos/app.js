@@ -41,7 +41,7 @@ function navigate(view) {
   $(`.nav-item[data-view="${view}"]`).classList.add("active");
   const titles = {
     dashboard: ["OPERATIONS", "Good morning, Devan."],
-    customers: ["CRM DATABASE", "Customer relationships"],
+    customers: ["CRM DATABASE", "Customers"],
     checkout: ["POINT OF SALE", "New checkout"],
     insights: ["AI ASSISTANT", "Follow-up workspace"],
     transactions: ["SALES LEDGER", "Transaction history"]
