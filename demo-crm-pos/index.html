@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ClarityOS — CRM + POS demo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <a class="brand" href="#dashboard" aria-label="ClarityOS home">
+          <span class="brand-mark">C</span>
+          <span>clarity<span>OS</span></span>
+        </a>
+
+        <nav class="main-nav" aria-label="Main navigation">
+          <button class="nav-item active" data-view="dashboard"><span>▦</span> Overview</button>
+          <button class="nav-item" data-view="customers"><span>♙</span> Customers</button>
+          <button class="nav-item" data-view="checkout"><span>⌁</span> Checkout</button>
+          <button class="nav-item" data-view="insights"><span>✦</span> AI follow-ups <em>New</em></button>
+          <button class="nav-item" data-view="transactions"><span>▤</span> Transactions</button>
+        </nav>
+
+        <div class="sidebar-bottom">
+          <div class="trial-card">
+            <span class="mini-label">DEMO WORKSPACE</span>
+            <strong>Built for the brief.</strong>
+            <p>Mock data · no live charges</p>
+          </div>
+          <button class="profile"><span class="avatar">D</span><span><strong>Devan</strong><small>Admin workspace</small></span><b>•••</b></button>
+        </div>
+      </aside>
+
+      <main>
+        <header class="topbar">
+          <button class="mobile-menu" aria-label="Open navigation">☰</button>
+          <div class="crumb"><span id="page-kicker">OPERATIONS</span><h1 id="page-title">Good morning, Devan.</h1></div>
+          <div class="top-actions">
+            <button class="icon-btn" aria-label="Notifications">◌<i></i></button>
+            <button class="primary-btn" id="new-customer">+ Add customer</button>
+          </div>
+        </header>
+
+        <section class="view active" id="dashboard-view">
+          <div class="hero-row">
+            <div><p class="eyebrow">SEPTEMBER PERFORMANCE</p><h2>Your business, at a glance.</h2><p class="subcopy">A quiet command centre for relationships and revenue.</p></div>
+            <button class="date-button">September 1–20 <span>⌄</span></button>
+          </div>
+
+          <div class="metric-grid">
+            <article class="metric-card"><span class="metric-icon cyan">↗</span><p>Total sales</p><h3>$18,640<span>.00</span></h3><small class="up">↑ 14.8% <b>vs. last month</b></small></article>
+            <article class="metric-card"><span class="metric-icon coral">♙</span><p>Active customers</p><h3>1,284</h3><small class="up">↑ 8.2% <b>vs. last month</b></small></article>
+            <article class="metric-card"><span class="metric-icon yellow">⌁</span><p>Average order</p><h3>$86<span>.30</span></h3><small class="down">↓ 2.4% <b>vs. last month</b></small></article>
+            <article class="metric-card"><span class="metric-icon purple">✦</span><p>Follow-ups ready</p><h3>24</h3><small class="up">↑ 6 new <b>this week</b></small></article>
+          </div>
+
+          <div class="dashboard-grid">
+            <article class="panel revenue-panel">
+              <div class="panel-head"><div><p class="eyebrow">REVENUE</p><h3>Sales performance</h3></div><button class="text-button">View report →</button></div>
+              <div class="chart-total"><strong>$18,640</strong><span>↑ 14.8%</span></div>
+              <div class="chart-wrap">
+                <div class="y-axis"><span>$6k</span><span>$4k</span><span>$2k</span><span>$0</span></div>
+                <svg viewBox="0 0 640 210" role="img" aria-label="Sales chart">
+                  <defs><linearGradient id="fill" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#20c7c9" stop-opacity=".32"/><stop offset="100%" stop-color="#20c7c9" stop-opacity="0"/></linearGradient></defs>
+                  <g class="grid-lines"><path d="M0 18H640M0 76H640M0 134H640M0 192H640"/></g>
+                  <path class="area" d="M0,167 C37,144 62,150 95,128 S151,149 188,105 S238,134 276,93 S328,118 361,74 S417,97 450,54 S501,77 536,43 S587,51 640,20 L640,192 L0,192Z"/>
+                  <path class="line" d="M0,167 C37,144 62,150 95,128 S151,149 188,105 S238,134 276,93 S328,118 361,74 S417,97 450,54 S501,77 536,43 S587,51 640,20"/>
+                  <circle cx="536" cy="43" r="5"/>
+                </svg>
+                <div class="x-axis"><span>Sep 1</span><span>Sep 5</span><span>Sep 10</span><span>Sep 15</span><span>Today</span></div>
+              </div>
+            </article>
+
+            <article class="panel followup-panel">
+              <div class="panel-head"><div><p class="eyebrow">SMART QUEUE</p><h3>Follow-up opportunities</h3></div><button class="text-button" data-go="insights">See all →</button></div>
+              <div class="opportunity"><span class="avatar pink">JW</span><div><strong>Jordan Williams</strong><small>Last purchase · 41 days ago</small></div><button class="spark" data-draft="Jordan Williams">✦</button></div>
+              <div class="opportunity"><span class="avatar orange">MK</span><div><strong>Maya Kim</strong><small>Abandoned cart · $124.00</small></div><button class="spark" data-draft="Maya Kim">✦</button></div>
+              <div class="opportunity"><span class="avatar blue">AS</span><div><strong>Alex Singh</strong><small>High-value · $1,860 lifetime</small></div><button class="spark" data-draft="Alex Singh">✦</button></div>
+            </article>
+          </div>
+
+          <article class="panel activity-panel">
+            <div class="panel-head"><div><p class="eyebrow">LIVE ACTIVITY</p><h3>Recent transactions</h3></div><button class="text-button" data-go="transactions">View all →</button></div>
+            <div class="transaction-table" id="activity-transactions"></div>
+          </article>
+        </section>
+
+        <section class="view" id="customers-view">
+          <div class="section-header"><div><p class="eyebrow">CRM DATABASE</p><h2>Customer relationships</h2><p class="subcopy">Profiles, history, notes, and next best actions in one place.</p></div><button class="primary-btn" id="new-customer-alt">+ Add customer</button></div>
+          <div class="crm-toolbar"><label class="search"><span>⌕</span><input id="customer-search" placeholder="Search name, email, or tag…" /></label><button class="filter-button">All customers <span>⌄</span></button><span id="customer-count"></span></div>
+          <div class="customer-layout">
+            <div class="panel customers-panel"><div class="customer-list" id="customer-list"></div></div>
+            <aside class="panel customer-detail" id="customer-detail"></aside>
+          </div>
+        </section>
+
+        <section class="view" id="checkout-view">
+          <div class="section-header"><div><p class="eyebrow">POINT OF SALE</p><h2>New checkout</h2><p class="subcopy">A clean, focused flow for an in-person or assisted sale.</p></div><span class="safe-badge">● Test mode</span></div>
+          <div class="checkout-layout">
+            <section class="panel product-panel"><div class="panel-head"><div><h3>Quick add</h3><p>Pick an item to add it to the cart.</p></div></div><div class="product-grid" id="product-grid"></div></section>
+            <aside class="panel cart-panel">
+              <div class="panel-head"><div><h3>Current sale</h3><p id="cart-customer">Walk-in customer</p></div><button class="text-button" id="clear-cart">Clear</button></div>
+              <label class="select-customer"><span>Customer</span><select id="sale-customer"><option value="">Walk-in customer</option></select></label>
+              <div class="cart-items" id="cart-items"><div class="empty-cart">Your cart is empty.<br/><small>Add a product to get started.</small></div></div>
+              <div class="cart-summary"><div><span>Subtotal</span><strong id="subtotal">$0.00</strong></div><div><span>Tax · 8%</span><strong id="tax">$0.00</strong></div><div class="cart-total"><span>Total</span><strong id="total">$0.00</strong></div></div>
+              <button class="checkout-button" id="complete-sale" disabled>Pay securely <span id="checkout-total">$0.00</span></button>
+              <p class="payment-note">▣ Simulated Stripe test checkout · No charge will be made</p>
+            </aside>
+          </div>
+        </section>
+
+        <section class="view" id="insights-view">
+          <div class="section-header"><div><p class="eyebrow">AI ASSISTANT</p><h2>Thoughtful follow-ups, faster.</h2><p class="subcopy">Turn purchase context into an editable draft—always review before sending.</p></div><span class="safe-badge violet">✦ Demo LLM</span></div>
+          <div class="ai-layout">
+            <section class="panel ai-context">
+              <p class="eyebrow">SELECT A CUSTOMER</p><div id="ai-customer-picker" class="ai-picker"></div>
+              <div class="context-card" id="ai-context"></div>
+            </section>
+            <section class="panel composer">
+              <div class="panel-head"><div><p class="eyebrow">PERSONALIZED DRAFT</p><h3>Email composer</h3></div><span class="model-label">AI-assisted</span></div>
+              <div class="compose-fields"><label>To <input id="email-to" readonly /></label><label>Subject <input id="email-subject" /></label><label class="message-label">Message <textarea id="email-message"></textarea></label></div>
+              <div class="compose-actions"><button class="secondary-btn" id="regenerate">↻ Regenerate</button><button class="primary-btn" id="copy-email">Copy draft</button></div>
+              <p class="ai-disclaimer">Draft generated from mock purchase history. This demo does not send email or call an external LLM.</p>
+            </section>
+          </div>
+        </section>
+
+        <section class="view" id="transactions-view">
+          <div class="section-header"><div><p class="eyebrow">SALES LEDGER</p><h2>Transactions</h2><p class="subcopy">Every sale and receipt in a simple, searchable history.</p></div><button class="secondary-btn">↓ Export CSV</button></div>
+          <article class="panel full-table"><div class="transaction-table all-transactions" id="all-transactions"></div></article>
+        </section>
+      </main>
+    </div>
+
+    <div class="modal-backdrop" id="customer-modal" aria-hidden="true">
+      <form class="modal" id="customer-form"><button type="button" class="modal-close" data-close>×</button><p class="eyebrow">NEW CRM PROFILE</p><h2>Add a customer</h2><p>Start with the essentials. Notes and purchase history grow from here.</p><label>Full name<input required id="form-name" placeholder="e.g. Taylor Morgan" /></label><label>Email<input required type="email" id="form-email" placeholder="taylor@example.com" /></label><label>Customer note<textarea id="form-note" placeholder="How can your team serve them better?"></textarea></label><button class="primary-btn modal-submit">Create profile →</button></form>
+    </div>
+    <div class="toast" id="toast"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
