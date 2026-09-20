@@ -2,3 +2,5 @@
 *.log
 .vercel/
 demo-crm-pos/.vercel/
+.vercel
+.env*
